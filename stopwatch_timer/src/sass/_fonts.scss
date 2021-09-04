@@ -1,0 +1,16 @@
+$font-path: "../assets";
+
+@font-face {
+    font-family: "digital-7";
+    src: url("#{$font-path}/digital-7.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "crenzo";
+    src: url("#{$font-path}/crenzo.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "digital-7";
+  src: url("../assets/digital-7.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "crenzo";
+  src: url("../assets/crenzo.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+.home section {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.home section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: -10;
+}
+.home section .elements h2 {
+  font-family: "crenzo";
+  color: red;
+}
+
+/*# sourceMappingURL=main.css.map */
