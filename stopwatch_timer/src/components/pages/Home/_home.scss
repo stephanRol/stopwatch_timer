@@ -1,3 +1,5 @@
+@use '../../../sass/colors';
+
 .home{
     section{
         width: 100vw;
@@ -10,14 +12,61 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.8;
+            opacity: 0.3;
+            filter: grayscale(100%);
             z-index: -10;
         }
+        .overlay{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(160, 170, 184); 
+            mix-blend-mode: overlay; 
+            z-index: -10;
+
+        }
         .elements{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
             h2{
                 font-family: "crenzo";
-                color: red;
+                color: colors.$primary;
+                font-size: 8rem;
+                margin: 0;
             }
+            p{
+                font-family: "crenzo";
+                color: colors.$primary;
+                font-size: 2rem;
+            }
+            .start-link{
+                text-decoration: none;
+                border-radius: 50px;
+                button{
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                    color: colors.$primary;
+                    letter-spacing: 0.2rem;
+                    padding: 0.8rem 3.5rem;
+                    border: 2px solid colors.$primary;
+                    border-radius: 1.5rem;
+                    background-color: transparent;
+                    transition: 0.3s;
+
+                    &:hover{
+                        color: rgb(228, 228, 228);
+                        background-color: colors.$primary;
+                        cursor: pointer;
+                    }
+                }
+            }       
         }
     }
 

@@ -7,10 +7,13 @@ const Home = () => {
     <div className="home">
       <section>
         <video src={clock} muted loop autoPlay></video>
+        <div className="overlay"></div>
         <div className="elements">
-          <h2>Home</h2>
-          <Link to="/stopwatch">Stopwatch</Link>
-          <Link to="/timer">Timer</Link>
+          <h2>Time</h2>
+          <p>is running out</p>
+          <Link to="/stopwatch" className="start-link">
+            <button>START</button>
+          </Link>
         </div>
       </section>
     </div>
