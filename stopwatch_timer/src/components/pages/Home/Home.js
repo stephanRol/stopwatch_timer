@@ -11,7 +11,7 @@ const Home = () => {
         <div className="elements">
           <h2>Time</h2>
           <p>is running out</p>
-          <Link to="/stopwatch" className="start-link">
+          <Link to="/timer" className="start-link">
             <button>START</button>
           </Link>
         </div>

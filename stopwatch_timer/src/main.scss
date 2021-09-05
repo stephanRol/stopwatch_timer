@@ -1,4 +1,7 @@
 @use './sass/fonts';
-@use './components/pages/Home/home'
+@use './components/Navbar/navbar';
+@use './components/pages/Home/home';
+@use './components/pages/Error404/error404';
+@use './components/pages/Timer_page/timer_page';
 
 

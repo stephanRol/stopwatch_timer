@@ -1,0 +1,18 @@
+@use '../../../sass/colors';
+
+.error404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: colors.$primary;
+    h2{
+        margin:0;
+        font-family: "crenzo";
+        font-size: 4rem;
+        color: colors.$secondary;
+
+
+    }
+}

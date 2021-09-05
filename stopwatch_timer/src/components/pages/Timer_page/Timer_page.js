@@ -4,10 +4,12 @@ import Timer from "../../timer/Timer";
 
 const Timer_page = () => {
   return (
-    <div>
+    <div className="timer_page">
       <Navbar />
-      <h2>Timer-Page</h2>
-      <Timer />
+      <section>
+        <h2>Timer-Page</h2>
+        <Timer />
+      </section>
     </div>
   );
 };
