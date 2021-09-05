@@ -1,0 +1,110 @@
+@use '../../sass/colors';
+@use '../../sass/fonts';
+
+%digital{
+    width: 18%;
+    margin: 1rem;
+    padding: 0 2rem;
+    padding-left: 3rem;
+    color: colors.$numbers-color;
+    text-shadow: desaturate(colors.$numbers-color,30%) 1px 0 25px;
+    
+    letter-spacing: 0.8rem;
+    background-color: transparent;
+    font-family: "digital-7-mono";
+    font-size: 10rem;
+    border: none;
+    text-align: center;
+
+    //Neumorphism
+    border-radius: 20px;
+    background: #333333;
+    box-shadow: inset 11px 11px 22px #2c2c2c,
+                inset -11px -11px 22px #3a3a3a;
+}
+
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 50vh;
+    //Neumorphism
+    border-radius: 44px;
+    background: #333333;
+    box-shadow:  36px 36px 73px #282828,
+             -36px -36px 73px #3e3e3e;
+
+    .timer-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem;
+        width: 100%;
+        .inputs{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            input{
+                @extend %digital;
+            }
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button{
+                -webkit-appearance: none;
+            }
+
+            input[type=number]{
+                -moz-appearance: textfield;
+            }
+        }
+
+        .buttons{
+            display: flex;
+            button{
+                color: desaturate(colors.$numbers-color,80%);
+                border: none;
+                cursor: pointer;
+                margin: 2.5rem 2rem;
+                padding: 2rem 4rem;
+                font-size: 1.5rem;
+                font-family: "oswald", "sans-serif";
+                letter-spacing: 0.3rem;
+                
+                border-radius: 117px;
+                background: linear-gradient(145deg, #373737, #2e2e2e);
+                box-shadow:  20px 20px 40px #272727,
+                            -20px -20px 40px #3f3f3f;
+                            transition: 0.2s;
+    
+                &:hover{
+                color: desaturate(colors.$numbers-color,0%);
+                text-shadow: desaturate(colors.$numbers-color,30%) 1px 0 35px;
+                }
+            }
+        }
+
+        .numbers{
+            @extend %digital;
+            min-width: 90%;
+            letter-spacing: 0.5rem;
+        }
+        p{
+            color:#f52d2d;
+            text-shadow: desaturate(#db0505,10%) 0px 0 15px;
+            font-family: "digital-7-mono";
+            font-size: 10rem;
+            margin:0;
+            animation: blink 1s infinite ease-in-out;
+            @keyframes blink{
+                50%{
+                    color: desaturate(#f52727, 70%);
+                    text-shadow: desaturate(#f52727,90%) 1px 0 0px;
+                }
+            }
+        }
+        
+        
+    }
+}
+

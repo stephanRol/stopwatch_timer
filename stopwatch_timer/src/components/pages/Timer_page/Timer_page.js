@@ -7,7 +7,6 @@ const Timer_page = () => {
     <div className="timer_page">
       <Navbar />
       <section>
-        <h2>Timer-Page</h2>
         <Timer />
       </section>
     </div>

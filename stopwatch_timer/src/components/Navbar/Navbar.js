@@ -5,9 +5,15 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <ul>
-        <Link to="/">Home</Link>
-        <Link to="/timer">Timer</Link>
-        <Link to="/stopwatch">Stopwatch</Link>
+        <Link className="link" to="/">
+          Home
+        </Link>
+        <Link className="link" to="/timer">
+          Timer
+        </Link>
+        <Link className="link" to="/stopwatch">
+          Stopwatch
+        </Link>
       </ul>
     </div>
   );

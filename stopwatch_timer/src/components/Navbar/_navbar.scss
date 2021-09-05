@@ -1,5 +1,24 @@
+@use '../../sass/colors';
+
 .navbar{
+    position: absolute;
+    top: 0;
+    right: 0;
     ul{
-        margin: 0;
+        margin: 2rem;
+        .link{
+            margin: 2rem;
+            text-decoration: none;
+            color: colors.$secondary;
+            font-family: "oswald";
+            font-size: 1.1rem;
+            letter-spacing: 0.3rem;
+            transition: 0.3s;
+            &:hover{
+                color: colors.$numbers-color;
+            }
+        }
+
+
     }
 }
