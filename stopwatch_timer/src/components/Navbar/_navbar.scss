@@ -2,20 +2,25 @@
 
 .navbar{
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     top: 0;
     right: 0;
+    width:100vw;
+
     ul{
-        margin: 2rem;
+        margin: 3rem;
         .link{
             margin: 2rem;
             text-decoration: none;
-            color: colors.$secondary;
+            color: #808080;
             font-family: "oswald";
             font-size: 1.1rem;
             letter-spacing: 0.3rem;
             transition: 0.3s;
             &:hover{
-                color: colors.$numbers-color;
+                color: white;
             }
         }
 

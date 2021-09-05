@@ -4,9 +4,11 @@ import Stopwatch from "../../stopwatch/Stopwatch";
 
 const Stopwatch_page = () => {
   return (
-    <div>
+    <div className="stopwatch_page">
       <Navbar />
-      <Stopwatch />
+      <section>
+        <Stopwatch />
+      </section>
     </div>
   );
 };

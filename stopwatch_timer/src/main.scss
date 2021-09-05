@@ -1,8 +1,10 @@
 @use './sass/fonts';
 @use './components/Navbar/navbar';
 @use './components/timer/timer';
+@use './components/stopwatch/stopwatch';
 @use './components/pages/Home/home';
 @use './components/pages/Error404/error404';
 @use './components/pages/Timer_page/timer_page';
+@use './components/pages/Stopwatch_page/stopwatch_page';
 
 

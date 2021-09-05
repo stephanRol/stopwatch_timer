@@ -15,50 +15,56 @@ const Stopwatch = () => {
   }, [timeOn]);
 
   return (
-    <div>
-      <h2>stopwatch</h2>
-      <div className="numbers">
-        <span>
-          {Math.floor((time / 100000) % 24)
-            .toString()
-            .padStart(2, "0")}
-        </span>
-        :
-        <span>
-          {Math.floor((time / 10000) % 60)
-            .toString()
-            .padStart(2, "0")}
-        </span>
-        :
-        <span>
-          {Math.floor((time / 1000) % 60)
-            .toString()
-            .padStart(2, "0")}
-        </span>
-        .<span>{Math.floor((time / 100) % 10).toString()}</span>,
-        <span>{Math.floor((time / 10) % 10).toString()}</span>
+    <div className="stopwatch">
+      <div className="stopwatch-box">
+        <div className="numbers">
+          <span>
+            {Math.floor((time / (1000 * 60 * 60)) % 24)
+              .toString()
+              .padStart(2, "0")}
+          </span>
+          :
+          <span>
+            {Math.floor((time / (1000 * 60)) % 60)
+              .toString()
+              .padStart(2, "0")}
+          </span>
+          :
+          <span>
+            {Math.floor((time / 1000) % 60)
+              .toString()
+              .padStart(2, "0")}
+          </span>
+          .<span>{Math.floor((time / 100) % 10).toString()}</span>,
+          <span>{Math.floor((time / 10) % 10).toString()}</span>
+        </div>
+        <div className="buttons">
+          {timeOn ? (
+            <button
+              onClick={() => {
+                setTimeOn(false);
+              }}
+            >
+              Stop
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setTimeOn(true);
+              }}
+            >
+              Start
+            </button>
+          )}
+          <button
+            onClick={() => {
+              setTime(0);
+            }}
+          >
+            Reset
+          </button>
+        </div>
       </div>
-      <button
-        onClick={() => {
-          setTimeOn(true);
-        }}
-      >
-        Start
-      </button>
-      <button
-        onClick={() => {
-          setTimeOn(false);
-        }}
-      >
-        Stop
-      </button>
-      <button
-        onClick={() => {
-          setTime(0);
-        }}
-      >
-        Reset
-      </button>
     </div>
   );
 };

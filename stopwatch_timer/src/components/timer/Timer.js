@@ -87,7 +87,7 @@ const Timer = () => {
             />
           </div>
         ) : time === 0 ? (
-          <p>Time is out!</p>
+          <p>Time is up!</p>
         ) : (
           <div className="numbers">
             <span>
