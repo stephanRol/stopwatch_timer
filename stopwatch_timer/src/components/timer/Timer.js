@@ -45,14 +45,10 @@ const Timer = () => {
   return (
     <motion.div
       className="timer"
-      initial={{
-        boxShadow: "36px 36px 72px #323232, -36px -36px 72px #343434",
-      }}
-      animate={{
-        boxShadow: "36px 36px 73px #282828, -36px -36px 73px #3e3e3e",
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={({ y: 0 }, { duration: 0.1 })}
-      transition={{ duration: 1, delay: 0.2 }}
+      transition={{ duration: 1, delay: 0.2, ease: "easeIn" }}
     >
       <div className="timer-box">
         {time === 0 && message === false ? (
@@ -131,25 +127,12 @@ const Timer = () => {
             message === false ? (
               <motion.button
                 onClick={presetTime}
-                initial={{
-                  background: "#333333",
-                  boxShadow: "36px 36px 72px #323232, -36px -36px 72px #343434",
-                }}
-                animate={{
-                  background: "linear-gradient(145deg, #373737, #2e2e2e)",
-                  boxShadow: "20px 20px 40px #272727, -20px -20px 40px #3f3f3f",
-                }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 exit={({ y: 0 }, { duration: 0.1 })}
-                transition={{ duration: 0.8, delay: 1, ease: "easeIn" }}
+                transition={{ duration: 0.3, delay: 1.5, ease: "easeIn" }}
               >
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={({ y: 0 }, { duration: 0.1 })}
-                  transition={{ duration: 0.3, delay: 1.5, ease: "easeIn" }}
-                >
-                  Set Time
-                </motion.div>
+                Set Time
               </motion.button>
             ) : (
               <button

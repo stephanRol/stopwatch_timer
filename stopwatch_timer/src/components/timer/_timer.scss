@@ -6,8 +6,7 @@
     margin: 1rem;
     padding-left: clamp(0.1rem, calc(0.1rem + 3vw),1.4rem);
     color: colors.$numbers-color;
-    text-shadow: desaturate(colors.$numbers-color,30%) 1px 0 25px;
-    
+    text-shadow: desaturate(colors.$numbers-color,30%) 1px 0 25px;  
     letter-spacing: 0.8rem;
     background-color: transparent;
     font-family: "digital-7-mono";
@@ -61,7 +60,6 @@
             input[type=number]::-webkit-outer-spin-button{
                 -webkit-appearance: none;
             }
-
             input[type=number]{
                 -moz-appearance: textfield;
             }
@@ -82,7 +80,6 @@
                 font-size: 1.5rem;
                 font-family: "oswald", "sans-serif";
                 letter-spacing: 0.3rem;
-                
                 border-radius: 117px;
                 background: linear-gradient(145deg, #373737, #2e2e2e);
                 box-shadow:  20px 20px 40px #272727,

@@ -11,10 +11,6 @@ const Home = () => {
       animate={{ y: 0 }}
       exit={{ y: "-100vh" }}
       transition={{ duration: 0.5 }}
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // exit={{ opacity: 0 }}
-      // transition={{ duration: 0.4 }}
     >
       <section>
         <video src={clock} muted loop autoPlay></video>

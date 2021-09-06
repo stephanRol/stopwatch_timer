@@ -55,7 +55,13 @@ const Stopwatch = () => {
           .<span>{Math.floor((time / 100) % 10).toString()}</span>,
           <span>{Math.floor((time / 10) % 10).toString()}</span>
         </motion.div>
-        <div className="buttons">
+        <motion.div
+          className="buttons"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={({ y: 0 }, { duration: 0.1 })}
+          transition={{ duration: 0.6, delay: 1.5, ease: "easeIn" }}
+        >
           {timeOn ? (
             <button
               onClick={() => {
@@ -65,56 +71,22 @@ const Stopwatch = () => {
               Stop
             </button>
           ) : (
-            <motion.button
+            <button
               onClick={() => {
                 setTimeOn(true);
               }}
-              initial={{
-                background: "#bababa",
-                boxShadow: "11px 11px 22px #b8b8b8, -11px -11px 22px #bcbcbc",
-              }}
-              animate={{
-                background: "#bababa",
-                boxShadow: "11px 11px 22px #a4a4a4, -11px -11px 22px #d0d0d0",
-              }}
-              exit={({ y: 0 }, { duration: 0.1 })}
-              transition={{ duration: 0.8, delay: 1, ease: "easeIn" }}
             >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={({ y: 0 }, { duration: 0.1 })}
-                transition={{ duration: 0.3, delay: 1.5, ease: "easeIn" }}
-              >
-                Start
-              </motion.div>
-            </motion.button>
+              Start
+            </button>
           )}
-          <motion.button
+          <button
             onClick={() => {
               setTime(0);
             }}
-            initial={{
-              background: "#bababa",
-              boxShadow: "11px 11px 22px #b8b8b8, -11px -11px 22px #bcbcbc",
-            }}
-            animate={{
-              background: "#bababa",
-              boxShadow: "11px 11px 22px #a4a4a4, -11px -11px 22px #d0d0d0",
-            }}
-            exit={({ y: 0 }, { duration: 0.1 })}
-            transition={{ duration: 0.8, delay: 1, ease: "easeIn" }}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={({ y: 0 }, { duration: 0.1 })}
-              transition={{ duration: 0.3, delay: 1.5, ease: "easeIn" }}
-            >
-              Reset
-            </motion.div>
-          </motion.button>
-        </div>
+            Reset
+          </button>
+        </motion.div>
       </div>
     </motion.div>
   );

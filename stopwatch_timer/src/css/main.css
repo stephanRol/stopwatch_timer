@@ -173,8 +173,8 @@
   margin: 1rem;
   padding: 0 2rem;
   padding-left: 3rem;
-  color: #09fff3ec;
-  text-shadow: rgba(46, 218, 210, 0.9254901961) 1px 0 25px;
+  color: #09fff3;
+  text-shadow: #2edad2 1px 0 25px;
   letter-spacing: 0.8rem;
   background-color: transparent;
   font-family: "digital-7-mono";
@@ -219,7 +219,7 @@
   }
 }
 .stopwatch .stopwatch-box .buttons button {
-  color: rgba(107, 157, 154, 0.9254901961);
+  color: #6b9d9a;
   border: none;
   cursor: pointer;
   margin: 2.5rem 2rem;
@@ -233,8 +233,8 @@
   transition: 0.2s;
 }
 .stopwatch .stopwatch-box .buttons button:hover {
-  color: rgba(9, 255, 243, 0.9254901961);
-  text-shadow: rgba(46, 218, 210, 0.9254901961) 1px 0 35px;
+  color: #09fff3;
+  text-shadow: #2edad2 1px 0 35px;
 }
 @media (max-width: 768px) {
   .stopwatch .stopwatch-box .buttons button {

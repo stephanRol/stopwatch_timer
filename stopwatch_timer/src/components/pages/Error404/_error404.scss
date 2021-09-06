@@ -10,7 +10,6 @@
     h2{
         margin:0;
         font-family: "crenzo";
-        // font-size: 4rem;
         font-size: clamp(1.3rem, calc(1rem + 3vw), 4rem);
         color: colors.$secondary;
     }
