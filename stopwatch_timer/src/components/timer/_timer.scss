@@ -87,7 +87,7 @@
                 background: linear-gradient(145deg, #373737, #2e2e2e);
                 box-shadow:  20px 20px 40px #272727,
                             -20px -20px 40px #3f3f3f;
-                            transition: 0.2s;
+                transition: 0.2s;
     
                 &:hover{
                 color: desaturate(colors.$numbers-color,0%);

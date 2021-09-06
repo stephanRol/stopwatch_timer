@@ -1,4 +1,5 @@
 @use './sass/fonts';
+@use './sass/colors';
 @use './components/Navbar/navbar';
 @use './components/timer/timer';
 @use './components/stopwatch/stopwatch';
@@ -8,4 +9,7 @@
 @use './components/pages/Timer_page/timer_page';
 @use './components/pages/Stopwatch_page/stopwatch_page';
 
-
+html, body{
+    background-color: colors.$neumorphism;
+    overflow: hidden;
+}

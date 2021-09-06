@@ -173,8 +173,8 @@
   margin: 1rem;
   padding: 0 2rem;
   padding-left: 3rem;
-  color: #09fff3;
-  text-shadow: #2edad2 1px 0 25px;
+  color: #09fff3ec;
+  text-shadow: rgba(46, 218, 210, 0.9254901961) 1px 0 25px;
   letter-spacing: 0.8rem;
   background-color: transparent;
   font-family: "digital-7-mono";
@@ -219,7 +219,7 @@
   }
 }
 .stopwatch .stopwatch-box .buttons button {
-  color: #6b9d9a;
+  color: rgba(107, 157, 154, 0.9254901961);
   border: none;
   cursor: pointer;
   margin: 2.5rem 2rem;
@@ -233,8 +233,8 @@
   transition: 0.2s;
 }
 .stopwatch .stopwatch-box .buttons button:hover {
-  color: #09fff3;
-  text-shadow: #2edad2 1px 0 35px;
+  color: rgba(9, 255, 243, 0.9254901961);
+  text-shadow: rgba(46, 218, 210, 0.9254901961) 1px 0 35px;
 }
 @media (max-width: 768px) {
   .stopwatch .stopwatch-box .buttons button {
@@ -440,7 +440,7 @@ ul {
   object-fit: cover;
   opacity: 0.3;
   filter: grayscale(100%);
-  z-index: -10;
+  z-index: 0;
 }
 .home section .overlay {
   position: absolute;
@@ -448,9 +448,9 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #a0aab8;
+  background-color: #d8d8d8;
   mix-blend-mode: overlay;
-  z-index: -10;
+  z-index: 0;
 }
 .home section .elements {
   display: flex;
@@ -465,15 +465,18 @@ ul {
   color: #2c2c2c;
   font-size: clamp(2.5rem, calc(2.5rem + 6vw),8rem);
   margin: 0;
+  z-index: 20;
 }
 .home section .elements p {
   font-family: "crenzo";
   color: #2c2c2c;
   font-size: clamp(0.5rem, calc(0.5rem + 2vw),2rem);
+  z-index: 20;
 }
 .home section .elements .start-link {
   text-decoration: none;
   border-radius: 50px;
+  z-index: 20;
 }
 .home section .elements .start-link button {
   font-family: "Oswald", sans-serif;
@@ -534,6 +537,11 @@ ul {
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+html, body {
+  background-color: #333333;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

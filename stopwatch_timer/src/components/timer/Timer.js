@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import alarmSound from "../../assets/alarm.wav";
+import { motion } from "framer-motion";
 
 const Timer = () => {
   const [audio, setAudio] = useState(new Audio(alarmSound));
@@ -42,10 +43,26 @@ const Timer = () => {
   };
 
   return (
-    <div className="timer">
+    <motion.div
+      className="timer"
+      initial={{
+        boxShadow: "36px 36px 72px #323232, -36px -36px 72px #343434",
+      }}
+      animate={{
+        boxShadow: "36px 36px 73px #282828, -36px -36px 73px #3e3e3e",
+      }}
+      exit={({ y: 0 }, { duration: 0.1 })}
+      transition={{ duration: 1, delay: 0.2 }}
+    >
       <div className="timer-box">
         {time === 0 && message === false ? (
-          <div className="inputs">
+          <motion.div
+            className="inputs"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={({ y: 0 }, { duration: 0.1 })}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
             <input
               type="number"
               name="hours"
@@ -85,7 +102,7 @@ const Timer = () => {
               required
               title="Input seconds"
             />
-          </div>
+          </motion.div>
         ) : time === 0 ? (
           <p>Time is up!</p>
         ) : (
@@ -107,15 +124,33 @@ const Timer = () => {
                 .toString()
                 .padStart(2, "0")}
             </span>
-            {/* .<span>{Math.floor((time / 100) % 10).toString()}</span>,
-            <span>{Math.floor((time / 10) % 10).toString()}</span> */}
           </div>
         )}
-
         <div className="buttons">
           {time === 0 ? (
             message === false ? (
-              <button onClick={presetTime}>Set Time</button>
+              <motion.button
+                onClick={presetTime}
+                initial={{
+                  background: "#333333",
+                  boxShadow: "36px 36px 72px #323232, -36px -36px 72px #343434",
+                }}
+                animate={{
+                  background: "linear-gradient(145deg, #373737, #2e2e2e)",
+                  boxShadow: "20px 20px 40px #272727, -20px -20px 40px #3f3f3f",
+                }}
+                exit={({ y: 0 }, { duration: 0.1 })}
+                transition={{ duration: 0.8, delay: 1, ease: "easeIn" }}
+              >
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={({ y: 0 }, { duration: 0.1 })}
+                  transition={{ duration: 0.3, delay: 1.5, ease: "easeIn" }}
+                >
+                  Set Time
+                </motion.div>
+              </motion.button>
             ) : (
               <button
                 onClick={() => {
@@ -159,7 +194,7 @@ const Timer = () => {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -14,7 +14,7 @@
             object-fit: cover;
             opacity: 0.3;
             filter: grayscale(100%);
-            z-index: -10;
+            z-index: 0;
         }
         .overlay{
             position: absolute;
@@ -22,10 +22,9 @@
             left:0;
             width: 100%;
             height: 100%;
-            background-color: rgb(160, 170, 184); 
+            background-color: rgb(216, 216, 216); 
             mix-blend-mode: overlay; 
-            z-index: -10;
-
+            z-index: 0;
         }
         .elements{
             display: flex;
@@ -39,17 +38,23 @@
                 color: colors.$primary;
                 font-size: clamp(2.5rem, calc(2.5rem + 6vw),8rem);
                 margin: 0;
+                z-index: 20;
+
             }
             p{
                 font-family: "crenzo";
                 color: colors.$primary;
                 // font-size: 2rem;
                 font-size: clamp(0.5rem, calc(0.5rem + 2vw),2rem);
+                z-index: 20;
+
 
             }
             .start-link{
                 text-decoration: none;
                 border-radius: 50px;
+                z-index: 20;
+
                 button{
                     font-family: 'Oswald', sans-serif;
                     font-size: 1.3rem;
