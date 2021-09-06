@@ -24,9 +24,9 @@ const Timer = () => {
           //   audio.play();
           // }, 10000);
         } else {
-          setTime((prevTime) => prevTime - 10);
+          setTime((prevTime) => prevTime - 1000);
         }
-      }, 10);
+      }, 1000);
     } else {
       audio.pause();
       audio.currentTime = 0;
@@ -107,8 +107,8 @@ const Timer = () => {
                 .toString()
                 .padStart(2, "0")}
             </span>
-            .<span>{Math.floor((time / 100) % 10).toString()}</span>,
-            <span>{Math.floor((time / 10) % 10).toString()}</span>
+            {/* .<span>{Math.floor((time / 100) % 10).toString()}</span>,
+            <span>{Math.floor((time / 10) % 10).toString()}</span> */}
           </div>
         )}
 

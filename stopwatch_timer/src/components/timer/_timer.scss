@@ -4,15 +4,14 @@
 %digital{
     width: 18%;
     margin: 1rem;
-    padding: 0 2rem;
-    padding-left: 3rem;
+    padding-left: clamp(0.1rem, calc(0.1rem + 3vw),1.4rem);
     color: colors.$numbers-color;
     text-shadow: desaturate(colors.$numbers-color,30%) 1px 0 25px;
     
     letter-spacing: 0.8rem;
     background-color: transparent;
     font-family: "digital-7-mono";
-    font-size: 10rem;
+    font-size: clamp(1rem, calc(1rem + 8vw), 10rem);
     border: none;
     text-align: center;
 
@@ -21,6 +20,10 @@
     background: #333333;
     box-shadow: inset 11px 11px 22px #2c2c2c,
                 inset -11px -11px 22px #3a3a3a;
+    
+    @media (max-width: 768px){
+        width: 60%;
+    }                     
 }
 
 .timer{
@@ -46,6 +49,11 @@
             display: flex;
             justify-content: center;
             width: 100%;
+
+            @media (max-width: 768px){
+                flex-direction: column;
+                align-items: center;
+            }
             input{
                 @extend %digital;
             }
@@ -61,6 +69,10 @@
 
         .buttons{
             display: flex;
+            @media (max-width: 480px){
+                flex-direction: column;
+                margin-top: 2.5rem;
+            } 
             button{
                 color: desaturate(colors.$numbers-color,80%);
                 border: none;
@@ -81,6 +93,17 @@
                 color: desaturate(colors.$numbers-color,0%);
                 text-shadow: desaturate(colors.$numbers-color,30%) 1px 0 35px;
                 }
+
+                @media (max-width: 768px){
+                    margin: 1rem;
+                    padding: 1rem 2rem;
+                    font-size: 1.3rem;
+                }   
+                @media (max-width: 480px){
+                    margin: 0.8rem;
+                    padding: 0.8rem 1.8rem;
+                    font-size: 1.1rem;
+                } 
             }
         }
 
@@ -88,12 +111,19 @@
             @extend %digital;
             min-width: 90%;
             letter-spacing: 0.5rem;
+
+            @media (max-width: 480px){
+                letter-spacing: 0.2rem;
+                min-width: 80%;
+                border-radius: 15px;
+            }
         }
         p{
             color:#f52d2d;
             text-shadow: desaturate(#db0505,10%) 0px 0 15px;
             font-family: "digital-7-mono";
-            font-size: 10rem;
+            font-size: clamp(1rem, calc(1rem + 8vw), 10rem);
+            text-align: center;
             margin:0;
             animation: blink 1s infinite ease-in-out;
             @keyframes blink{
@@ -108,3 +138,10 @@
     }
 }
 
+//Common breakpoints for widths of devices:
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV

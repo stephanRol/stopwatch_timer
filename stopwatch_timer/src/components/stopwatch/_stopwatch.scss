@@ -12,15 +12,20 @@
     letter-spacing: 0.8rem;
     background-color: transparent;
     font-family: "digital-7-mono";
-    font-size: 10rem;
+    font-size: clamp(0.1rem, calc(0.1rem + 9vw), 10rem);
     border: none;
     text-align: center;
 
     //Neumorphism
     border-radius: 20px;
-    background: #333333;
-    box-shadow: inset 11px 11px 22px #2c2c2c,
-                inset -11px -11px 22px #3a3a3a;
+    background: #bababa;
+    box-shadow: inset 11px 11px 34px #b1b1b1,
+            inset -11px -11px 34px #c3c3c3;
+
+    @media (max-width: 480px){
+        padding: 0;
+    }
+    
 }
 
 .stopwatch{
@@ -31,9 +36,9 @@
     height: 50vh;
     //Neumorphism
     border-radius: 44px;
-    background: #333333;
-    box-shadow:  36px 36px 73px #282828,
-             -36px -36px 73px #3e3e3e;
+    background: #bababa;
+    box-shadow:  11px 11px 22px #a4a4a4,
+             -11px -11px 22px #d0d0d0;
 
     .stopwatch-box{
         display: flex;
@@ -46,6 +51,10 @@
 
         .buttons{
             display: flex;
+            @media (max-width: 480px){
+                flex-direction: column;
+                margin-top: 2.5rem;
+            } 
             button{
                 color: desaturate(colors.$numbers-color-2,80%);
                 border: none;
@@ -57,23 +66,54 @@
                 letter-spacing: 0.3rem;
                 
                 border-radius: 117px;
-                background: linear-gradient(145deg, #373737, #2e2e2e);
-                box-shadow:  20px 20px 40px #272727,
-                            -20px -20px 40px #3f3f3f;
-                            transition: 0.2s;
+                // background: linear-gradient(145deg, #373737, #2e2e2e);
+                // box-shadow:  20px 20px 40px #272727,
+                //             -20px -20px 40px #3f3f3f;
+                background: #bababa;
+                box-shadow:  11px 11px 22px #a4a4a4,
+                -11px -11px 22px #d0d0d0;
+                transition: 0.2s;
     
                 &:hover{
                 color: desaturate(colors.$numbers-color-2,0%);
                 text-shadow: desaturate(colors.$numbers-color-2,30%) 1px 0 35px;
                 }
+
+                @media (max-width: 768px){
+                    margin: 1rem;
+                    padding: 1rem 2rem;
+                    font-size: 1.3rem;
+                }   
+                @media (max-width: 480px){
+                    margin: 0.8rem;
+                    padding: 0.8rem 1.8rem;
+                    font-size: 1.1rem;
+                } 
             }
         }
 
         .numbers{
             @extend %digital;
-            min-width: 90%;
+            min-width: 85%;
             letter-spacing: 0.5rem;
+
+            @media (max-width: 768px){
+                letter-spacing: 0.2rem;
+                min-width: 75%;
+                border-radius: 15px;
+            }
+            @media (max-width: 480px){
+                letter-spacing: 0.2rem;
+                min-width: 90%;
+            }
         }
     }
 }
 
+//Common breakpoints for widths of devices:
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV

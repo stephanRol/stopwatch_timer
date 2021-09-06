@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Hamburger from "../Hamburger.js/Hamburger";
 
 const Navbar = () => {
   return (
     <div className="navbar">
-      <ul>
+      <Hamburger />
+      <ul className="stopwatch-timer-list">
         <Link className="link" to="/">
           Home
         </Link>

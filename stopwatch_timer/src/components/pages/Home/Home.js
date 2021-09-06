@@ -10,7 +10,7 @@ const Home = () => {
         <div className="overlay"></div>
         <div className="elements">
           <h2>Time</h2>
-          <p>is running out</p>
+          <p>&nbsp;&nbsp;is running out</p>
           <Link to="/timer" className="start-link">
             <button>START</button>
           </Link>

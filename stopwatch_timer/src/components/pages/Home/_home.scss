@@ -37,13 +37,15 @@
             h2{
                 font-family: "crenzo";
                 color: colors.$primary;
-                font-size: 8rem;
+                font-size: clamp(2.5rem, calc(2.5rem + 6vw),8rem);
                 margin: 0;
             }
             p{
                 font-family: "crenzo";
                 color: colors.$primary;
-                font-size: 2rem;
+                // font-size: 2rem;
+                font-size: clamp(0.5rem, calc(0.5rem + 2vw),2rem);
+
             }
             .start-link{
                 text-decoration: none;

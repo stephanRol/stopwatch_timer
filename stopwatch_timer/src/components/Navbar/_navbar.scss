@@ -8,11 +8,18 @@
     top: 0;
     right: 0;
     width:100vw;
+    height: 15vh;
+
+    @media (max-width: 480px) {
+        .stopwatch-timer-list{
+        display: none;
+        }
+    }
 
     ul{
-        margin: 3rem;
+    margin: 3rem;
         .link{
-            margin: 2rem;
+            margin: 0 2rem;
             text-decoration: none;
             color: #808080;
             font-family: "oswald";
@@ -23,7 +30,5 @@
                 color: white;
             }
         }
-
-
     }
 }
