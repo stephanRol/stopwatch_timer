@@ -3,7 +3,7 @@ import alarmSound from "../../assets/alarm.wav";
 import { motion } from "framer-motion";
 
 const Timer = () => {
-  const [audio, setAudio] = useState(new Audio(alarmSound));
+  const [audio] = useState(new Audio(alarmSound));
   const [time, setTime] = useState(0);
   const [timeOn, setTimeOn] = useState(false);
   const [hours, setHours] = useState(0);
@@ -13,29 +13,24 @@ const Timer = () => {
 
   useEffect(() => {
     let interval = null;
-    // let alarmInterval = null;
+    const clearAll = () => {
+      setMessage(true);
+      clearInterval(interval);
+      interval = setInterval(() => {
+        audio.play();
+      }, 1000);
+    };
     if (timeOn) {
       interval = setInterval(() => {
-        if (time === 0) {
-          setMessage(true);
-          clearInterval(interval);
-          audio.play();
-
-          // alarmInterval = setInterval(() => {
-          //   audio.play();
-          // }, 10000);
-        } else {
-          setTime((prevTime) => prevTime - 1000);
-        }
+        setTime((prevTime) => (prevTime === 0 ? clearAll() : prevTime - 1000));
       }, 1000);
     } else {
       audio.pause();
       audio.currentTime = 0;
-      // clearInterval(alarmInterval);
       clearInterval(interval);
     }
     return () => clearTimeout(interval);
-  }, [timeOn, time]);
+  }, [timeOn, audio]);
 
   const presetTime = () => {
     setTime(hours * 1000 * 60 * 60 + minutes * 1000 * 60 + seconds * 1000);
@@ -51,7 +46,7 @@ const Timer = () => {
       transition={{ duration: 1, delay: 0.2, ease: "easeIn" }}
     >
       <div className="timer-box">
-        {time === 0 && message === false ? (
+        {time === 0 && message === false && timeOn === false ? (
           <motion.div
             className="inputs"
             initial={{ opacity: 0 }}
@@ -99,7 +94,7 @@ const Timer = () => {
               title="Input seconds"
             />
           </motion.div>
-        ) : time === 0 ? (
+        ) : message === true ? (
           <p>Time is up!</p>
         ) : (
           <div className="numbers">
@@ -123,7 +118,7 @@ const Timer = () => {
           </div>
         )}
         <div className="buttons">
-          {time === 0 ? (
+          {time === 0 || time === undefined ? (
             message === false ? (
               <motion.button
                 onClick={presetTime}
