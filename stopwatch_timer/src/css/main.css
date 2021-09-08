@@ -74,12 +74,18 @@
   background: #333333;
   box-shadow: 36px 36px 73px #282828, -36px -36px 73px #3e3e3e;
 }
+@media (max-width: 768px) {
+  .timer {
+    height: 65vh;
+  }
+}
 .timer .timer-box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  padding-bottom: 1rem;
   width: 100%;
 }
 .timer .timer-box .inputs {
@@ -113,7 +119,8 @@
   color: #6e9e8a;
   border: none;
   cursor: pointer;
-  margin: 2.5rem 2rem;
+  margin: 2rem 2rem;
+  margin-top: 1.5rem;
   padding: 2rem 4rem;
   font-size: 1.5rem;
   font-family: "oswald", "sans-serif";
@@ -136,7 +143,7 @@
 }
 @media (max-width: 480px) {
   .timer .timer-box .buttons button {
-    margin: 0.8rem;
+    margin: 0.1rem;
     padding: 0.8rem 1.8rem;
     font-size: 1.1rem;
   }
@@ -201,12 +208,18 @@
   background: #bababa;
   box-shadow: 11px 11px 22px #a4a4a4, -11px -11px 22px #d0d0d0;
 }
+@media (max-width: 768px) {
+  .stopwatch {
+    height: 65vh;
+  }
+}
 .stopwatch .stopwatch-box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  padding-bottom: 1rem;
   width: 100%;
 }
 .stopwatch .stopwatch-box .buttons {
@@ -222,7 +235,8 @@
   color: #6b9d9a;
   border: none;
   cursor: pointer;
-  margin: 2.5rem 2rem;
+  margin: 2rem 2rem;
+  margin-top: 1.5rem;
   padding: 2rem 4rem;
   font-size: 1.5rem;
   font-family: "oswald", "sans-serif";

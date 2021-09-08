@@ -35,15 +35,18 @@
     //Neumorphism
     border-radius: 44px;
     background: #bababa;
-    box-shadow:  11px 11px 22px #a4a4a4,
-             -11px -11px 22px #d0d0d0;
-
+    box-shadow:  11px 11px 22px #a4a4a4, -11px -11px 22px #d0d0d0;
+    
+    @media (max-width: 768px){
+        height: 65vh;  
+    } 
     .stopwatch-box{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         padding: 2rem;
+        padding-bottom: 1rem;
         width: 100%;   
 
         .buttons{
@@ -56,7 +59,8 @@
                 color: desaturate(colors.$numbers-color-2,80%);
                 border: none;
                 cursor: pointer;
-                margin: 2.5rem 2rem;
+                margin: 2rem 2rem;
+                margin-top: 1.5rem;
                 padding: 2rem 4rem;
                 font-size: 1.5rem;
                 font-family: "oswald", "sans-serif";
