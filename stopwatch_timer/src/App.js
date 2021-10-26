@@ -13,13 +13,9 @@ function App() {
     <>
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.pathname}>
-          <Route exact path="/stopwatch_timer/" component={Home} />
-          <Route
-            exact
-            path="/stopwatch_timer/stopwatch"
-            component={Stopwatch_page}
-          />
-          <Route exact path="/stopwatch_timer/timer" component={Timer_page} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/stopwatch" component={Stopwatch_page} />
+          <Route exact path="/timer" component={Timer_page} />
           <Route path="*" component={Error404} />
         </Switch>
       </AnimatePresence>
